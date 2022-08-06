@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
@@ -37,7 +38,6 @@ public class Startup
         services.AddTransient<ApplicationDbContext>();
         services.AddMediatR(projectAssemblies.ToArray());
         services.AddAutoMapper(Assemblies.projectAssemblies);
-
         services.Configure<UserOptions>(Configuration.GetSection(UserOptions.Position));
 
         UserOptions userOptions = (UserOptions)Activator.CreateInstance(typeof(UserOptions));

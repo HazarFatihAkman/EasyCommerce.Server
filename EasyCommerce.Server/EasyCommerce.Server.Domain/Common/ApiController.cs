@@ -6,14 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EasyCommerce.Server.Shared.Common;
 
-[CustomApiControllerAttribute]
+[CustomApiController]
 public abstract class ApiController<TContent> : ControllerBase
 {
     private IMediator _mediator;
     protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
 }
 
-[CustomApiControllerAttribute]
+[CustomApiController]
 public abstract class ApiController : ControllerBase
 {
     private IMediator _mediator;

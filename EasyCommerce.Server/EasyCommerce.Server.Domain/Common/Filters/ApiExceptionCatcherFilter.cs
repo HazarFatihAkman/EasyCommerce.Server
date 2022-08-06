@@ -11,7 +11,7 @@ public class ApiExceptionCatcherFilter<TController> : IExceptionFilter
     {
         _logger = logger;
     }
-
+ 
     public void OnException(ExceptionContext context)
     {
         context.Result = new ContentResult
@@ -24,8 +24,8 @@ public class ApiExceptionCatcherFilter<TController> : IExceptionFilter
 }
 public class ApiExceptionCatcherFilter : IExceptionFilter
 {
-    private readonly ILogger _logger;
-    public ApiExceptionCatcherFilter(ILogger logger)
+    private readonly ILogger<ApiExceptionCatcherFilter> _logger;
+    public ApiExceptionCatcherFilter(ILogger<ApiExceptionCatcherFilter> logger)
     {
         _logger = logger;
     }
