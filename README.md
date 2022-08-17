@@ -1,8 +1,19 @@
 # EasyCommerce.Server
-### Project goal
-> This project about e-commerce system. You can use easly in your html codes with javascript and you can have a e-commerce system without any back-end code.
-
-
+```
+This project about e-commerce system.
+You can use easily in your html codes with javascript and you can have a e-commerce website.
+```
+## Installation
+```
+Release exe will add soon.
+```
 ### Required tools
-> 1 - Docker<br/>
-> 2 - Windows server
+```
+MsSql Server
+```
+
+## Usage
+```
+It will add some usage schemes.
+
+```
