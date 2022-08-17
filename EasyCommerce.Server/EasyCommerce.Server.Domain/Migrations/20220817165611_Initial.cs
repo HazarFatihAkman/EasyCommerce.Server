@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EasyCommerce.Server.Shared.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -318,17 +318,17 @@ namespace EasyCommerce.Server.Shared.Migrations
             migrationBuilder.InsertData(
                 table: "Taxes",
                 columns: new[] { "Id", "Name", "Percent" },
-                values: new object[] { new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b"), "standard tax", 18.0 });
+                values: new object[] { new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92"), "standard tax", 18.0 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "ApplicationRolesUser", "Email", "FirstName", "LastName", "Password", "Pin" },
-                values: new object[] { new Guid("1ec394d9-768b-4d25-b8e7-a65da278ed54"), 3, "admin@gmail.com", "Admin", "Easy Commerce", "Admin123!", "1" });
+                values: new object[] { new Guid("5b645a88-9509-4a45-a0a6-b5ee24f5785f"), 3, "admin@gmail.com", "Admin", "Easy Commerce", "Admin123!", "1" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Available", "Description", "ImgSrc", "KeyWords", "ParentId", "Title" },
-                values: new object[] { new Guid("38fc00c9-2a80-4945-9052-8b36cb67d293"), true, "test 1", "test 1", "test 1", new Guid("723de3b8-6c07-4e8c-b1fc-1844482d9c4d"), "Sub Category / Main 1" });
+                values: new object[] { new Guid("240f393a-1635-478d-8c89-70326d1ee533"), true, "test 1", "test 1", "test 1", new Guid("723de3b8-6c07-4e8c-b1fc-1844482d9c4d"), "Sub Category / Main 1" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -336,14 +336,19 @@ namespace EasyCommerce.Server.Shared.Migrations
                 values: new object[] { new Guid("7cf92a91-ba8d-495d-a1fa-2a6fad2012a8"), true, "test 1", "test 1", "test 1", new Guid("723de3b8-6c07-4e8c-b1fc-184b482d9c4d"), "Sub Category" });
 
             migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Available", "Description", "ImgSrc", "KeyWords", "ParentId", "Title" },
-                values: new object[] { new Guid("5a9b75a5-36f2-40c0-a563-91715c671383"), true, "test 2", "test 2", "test 2", new Guid("7cf92a91-ba8d-495d-a1fa-2a6fad2012a8"), "Sub -> 0 Category" });
+                table: "CreditCards",
+                columns: new[] { "Id", "CustomerId", "Cvv", "ExpMonth", "ExpYears", "Name", "Number" },
+                values: new object[] { new Guid("da36a422-efa1-4900-9fe4-faa9e9af1c9b"), new Guid("8a270105-a039-45b0-90e9-62e6886894e2"), 151, 12, 25, "Save card 1", "5400360000000003" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Available", "Description", "ImgSrc", "KeyWords", "ParentId", "Title" },
-                values: new object[] { new Guid("7f0fc44a-7a87-4ac3-8408-56207e389163"), true, "test 2", "test 2", "test 2", new Guid("38fc00c9-2a80-4945-9052-8b36cb67d293"), "Sub -> 0 Category / Main 1" });
+                values: new object[] { new Guid("0de9d83e-5e4c-4bd1-8ef1-2d4e32f921bc"), true, "test 2", "test 2", "test 2", new Guid("7cf92a91-ba8d-495d-a1fa-2a6fad2012a8"), "Sub -> 0 Category" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Available", "Description", "ImgSrc", "KeyWords", "ParentId", "Title" },
+                values: new object[] { new Guid("35286247-b1ea-4e7e-88fb-a64ce16230ac"), true, "test 2", "test 2", "test 2", new Guid("240f393a-1635-478d-8c89-70326d1ee533"), "Sub -> 0 Category / Main 1" });
 
             migrationBuilder.InsertData(
                 table: "Products",
@@ -353,17 +358,17 @@ namespace EasyCommerce.Server.Shared.Migrations
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Available", "Description", "ImgSrc", "KeyWords", "ParentId", "Title" },
-                values: new object[] { new Guid("a4b282ba-a378-413f-bd34-f8a6255c1fe3"), true, "test 32", "test 3", "test 3", new Guid("5a9b75a5-36f2-40c0-a563-91715c671383"), "Sub -> 1 Category" });
+                values: new object[] { new Guid("5ed874e6-7151-4cc9-a925-dd249e3a4881"), true, "test 32", "test 3", "test 3", new Guid("0de9d83e-5e4c-4bd1-8ef1-2d4e32f921bc"), "Sub -> 1 Category" });
 
             migrationBuilder.InsertData(
                 table: "Prices",
                 columns: new[] { "Id", "DiscountValue", "IsValidPrice", "PriceType", "ProductId", "SaleChannel", "TaxFreePrice", "TaxId" },
-                values: new object[] { new Guid("aba0000f-eb0b-4aeb-923e-0f5f9ccfa989"), 8.0, true, 2, new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"), 0, 20.5m, new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b") });
+                values: new object[] { new Guid("5d8e7a2a-88a4-4748-a41d-cbcb39286e70"), 0.0, false, 3, new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"), 0, 20.5m, new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92") });
 
             migrationBuilder.InsertData(
                 table: "Prices",
                 columns: new[] { "Id", "DiscountValue", "IsValidPrice", "PriceType", "ProductId", "SaleChannel", "TaxFreePrice", "TaxId" },
-                values: new object[] { new Guid("b496b582-c945-4722-a292-8b6110d229a0"), 0.0, false, 3, new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"), 0, 20.5m, new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b") });
+                values: new object[] { new Guid("aba0000f-eb0b-4aeb-923e-0f5f9ccfa989"), 8.0, true, 2, new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"), 0, 20.5m, new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92") });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Address_CustomerId",

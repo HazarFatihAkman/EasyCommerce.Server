@@ -17,7 +17,7 @@ namespace EasyCommerce.Server.Shared.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -205,7 +205,7 @@ namespace EasyCommerce.Server.Shared.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5a9b75a5-36f2-40c0-a563-91715c671383"),
+                            Id = new Guid("0de9d83e-5e4c-4bd1-8ef1-2d4e32f921bc"),
                             Available = true,
                             Description = "test 2",
                             ImgSrc = "test 2",
@@ -215,12 +215,12 @@ namespace EasyCommerce.Server.Shared.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a4b282ba-a378-413f-bd34-f8a6255c1fe3"),
+                            Id = new Guid("5ed874e6-7151-4cc9-a925-dd249e3a4881"),
                             Available = true,
                             Description = "test 32",
                             ImgSrc = "test 3",
                             KeyWords = "test 3",
-                            ParentId = new Guid("5a9b75a5-36f2-40c0-a563-91715c671383"),
+                            ParentId = new Guid("0de9d83e-5e4c-4bd1-8ef1-2d4e32f921bc"),
                             Title = "Sub -> 1 Category"
                         },
                         new
@@ -234,7 +234,7 @@ namespace EasyCommerce.Server.Shared.Migrations
                         },
                         new
                         {
-                            Id = new Guid("38fc00c9-2a80-4945-9052-8b36cb67d293"),
+                            Id = new Guid("240f393a-1635-478d-8c89-70326d1ee533"),
                             Available = true,
                             Description = "test 1",
                             ImgSrc = "test 1",
@@ -244,12 +244,12 @@ namespace EasyCommerce.Server.Shared.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7f0fc44a-7a87-4ac3-8408-56207e389163"),
+                            Id = new Guid("35286247-b1ea-4e7e-88fb-a64ce16230ac"),
                             Available = true,
                             Description = "test 2",
                             ImgSrc = "test 2",
                             KeyWords = "test 2",
-                            ParentId = new Guid("38fc00c9-2a80-4945-9052-8b36cb67d293"),
+                            ParentId = new Guid("240f393a-1635-478d-8c89-70326d1ee533"),
                             Title = "Sub -> 0 Category / Main 1"
                         });
                 });
@@ -289,6 +289,18 @@ namespace EasyCommerce.Server.Shared.Migrations
                         .IsUnique();
 
                     b.ToTable("CreditCards");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("da36a422-efa1-4900-9fe4-faa9e9af1c9b"),
+                            CustomerId = new Guid("8a270105-a039-45b0-90e9-62e6886894e2"),
+                            Cvv = 151,
+                            ExpMonth = 12,
+                            ExpYears = 25,
+                            Name = "Save card 1",
+                            Number = "5400360000000003"
+                        });
                 });
 
             modelBuilder.Entity("EasyCommerce.Server.Shared.Persistence.Entities.CustomerEntity", b =>
@@ -462,11 +474,11 @@ namespace EasyCommerce.Server.Shared.Migrations
                             ProductId = new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"),
                             SaleChannel = 0,
                             TaxFreePrice = 20.5m,
-                            TaxId = new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b")
+                            TaxId = new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92")
                         },
                         new
                         {
-                            Id = new Guid("b496b582-c945-4722-a292-8b6110d229a0"),
+                            Id = new Guid("5d8e7a2a-88a4-4748-a41d-cbcb39286e70"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DiscountValue = 0.0,
                             IsValidPrice = false,
@@ -474,7 +486,7 @@ namespace EasyCommerce.Server.Shared.Migrations
                             ProductId = new Guid("0ccc0e7e-bdec-4e75-b9b3-aa831952311d"),
                             SaleChannel = 0,
                             TaxFreePrice = 20.5m,
-                            TaxId = new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b")
+                            TaxId = new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92")
                         });
                 });
 
@@ -600,7 +612,7 @@ namespace EasyCommerce.Server.Shared.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f488bc9b-5e0d-4fa9-98cd-80a0de05c30b"),
+                            Id = new Guid("ea730e99-db32-42a2-9a2e-36e10fac7f92"),
                             Name = "standard tax",
                             Percent = 18.0
                         });
@@ -650,7 +662,7 @@ namespace EasyCommerce.Server.Shared.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1ec394d9-768b-4d25-b8e7-a65da278ed54"),
+                            Id = new Guid("5b645a88-9509-4a45-a0a6-b5ee24f5785f"),
                             ApplicationRolesUser = 3,
                             Email = "admin@gmail.com",
                             FirstName = "Admin",
