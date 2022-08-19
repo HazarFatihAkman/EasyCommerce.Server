@@ -44,8 +44,7 @@ public class CargoCompanyController : ApiController<CargoCompany>
     {
         var mediator = await Mediator.Send(new GetCargoCompany.Command { Id = id });
         return StatusCode(mediator.ResponseStatusCode, mediator);
-    }
-
+    }   
     [HttpPost("create")]
     [ProducesResponseType(typeof(ApiResponse<CargoCompany>), StatusCodes.Status201Created)]
     public async Task<IActionResult> PostAsync([FromBody] CargoCompany cargoCompany)
@@ -53,7 +52,6 @@ public class CargoCompanyController : ApiController<CargoCompany>
         var mediator = await Mediator.Send(new CreateCargoCompany.Command { CargoCompany = cargoCompany });
         return StatusCode(mediator.ResponseStatusCode, mediator);
     }
-
     [HttpPut("update")]
     [ProducesResponseType(typeof(ApiResponse<CargoCompany>), StatusCodes.Status204NoContent)]
     public async Task<IActionResult> UpdateAsync([FromBody] CargoCompany cargoCompany)

@@ -1,8 +1,11 @@
-﻿namespace EasyCommerce.Server.Shared.Options;
+﻿using EasyCommerce.Server.Shared.Common.Options;
 
-public class UserOptions
+namespace EasyCommerce.Server.Shared.Options;
+
+public class UserOptions : IOption
 {
-    public const string Position = "User";
+    public string Position => "User";
     public string ApiKey { get; set; }
     public int AddMonths { get; set; }
+
 }
