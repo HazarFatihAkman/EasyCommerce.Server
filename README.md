@@ -17,3 +17,8 @@ MsSql Server
 It will add some usage schemes.
 
 ```
+
+
+## Project Notes
+
+- [ ] Startup mess must be fixed.
